@@ -50,7 +50,7 @@
   height: 56px;
   border-radius: 9999px;
   object-fit: contain;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
 .footer-logo-title {
