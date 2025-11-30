@@ -1,7 +1,6 @@
 .developer-page {
   background: linear-gradient(180deg, #071226 0%, #07111b 60%);
   color: #ffffff;
- 
 }
 
 /* inner grid container */
@@ -20,12 +19,12 @@
 /* photo itself */
 .developer-photo {
   width: 100%;
-  max-width: 620px;        /* max size on large screens */
+  max-width: 620px;
   height: auto;
   margin-left:-95px;
   margin-top: -80px;
   object-fit: cover;
-  border-radius: 12px;     /* rounded corners - use 0 for hard square */
+  border-radius: 12px;
   box-shadow: 0 14px 36px rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.04);
   transition: transform 220ms ease, box-shadow 220ms ease;
@@ -103,7 +102,6 @@
 @media (max-width: 1024px) {
   .developer-photo {
     max-width: 420px;
-    
   }
   .developer-name { font-size: 1.8rem; }
 }
@@ -118,129 +116,116 @@
   }
   .developer-details { padding: 0 1rem; }
 }
-/* ===== Developer page — Mobile-only overrides (paste at end of developer.css) ===== */
+
+/* ===== Developer page — Mobile-only overrides ===== */
 @media (max-width: 768px) {
-  /* make the page padding compact and prevent horizontal overflow */
+
   .developer-page,
   .developer-inner {
-    padding: 1rem 0.9rem !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
+    padding: 1rem 0.9rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
-  /* stack layout: image above details */
   .developer-inner {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    align-items: center !important;
-    justify-items: center !important;
-    max-width: 100% !important;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 100%;
   }
 
-  /* photo wrapper: center & scale nicely on phones */
   .developer-photo-wrapper {
-    width: 92% !important;
-    max-width: 420px !important;
-    margin: 0.25rem auto !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
+    width: 92%;
+    max-width: 420px;
+    margin: 0.25rem auto;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .developer-photo {
-    width: 100% !important;
-    max-width: 420px !important;
-    height: auto !important;
-    object-fit: cover !important;
-    border-radius: 12px !important;
-    display: block !important;
-    margin: 0 auto !important;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5) !important;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
   }
 
-  /* details box: full width and centered */
   .developer-details {
-    width: 100% !important;
-    max-width: 720px !important;
-    padding: 0.8rem 1rem !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
+    width: 100%;
+    max-width: 720px;
+    padding: 0.8rem 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  /* shrink large title for mobile and center it */
   .developer-name {
-    font-size: 1.6rem !important;   /* readable on mobile */
-    line-height: 1.08 !important;
-    text-align: center !important;
-    margin: 0.45rem 0 !important;
-    word-break: break-word !important;
-    white-space: normal !important;
+    font-size: 1.6rem;
+    line-height: 1.08;
+    text-align: center;
+    margin: 0.45rem 0;
+    word-break: break-word;
+    white-space: normal;
   }
 
-  /* role and subtext */
   .developer-role {
-    font-size: 0.98rem !important;
-    text-align: center !important;
-    margin: 0.35rem 0 0.8rem !important;
-    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.98rem;
+    text-align: center;
+    margin: 0.35rem 0 0.8rem;
+    color: rgba(255,255,255,0.85);
   }
 
   .developer-bio p {
-    font-size: 0.98rem !important;
-    line-height: 1.55 !important;
-    color: rgba(255,255,255,0.9) !important;
-    text-align: center !important;
-    margin: 0.25rem 0 0.9rem !important;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    margin: 0.25rem 0 0.9rem;
   }
 
-  /* copyright / card */
   .developer-warning {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding: 12px 14px !important;
-    font-size: 0.95rem !important;
-    border-radius: 10px !important;
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border-radius: 10px;
   }
 
-  /* contact button sizing */
   .contact-pill,
   .developer-contact .contact-btn {
-    display: inline-block !important;
-    margin: 0.8rem auto 0 !important;
-    padding: 9px 16px !important;
-    font-size: 0.98rem !important;
+    display: inline-block;
+    margin: 0.8rem auto 0;
+    padding: 9px 16px;
+    font-size: 0.98rem;
   }
 
-  /* reduce inner gaps so large image + text fits */
   .developer-inner,
   .developer-wrapper {
-    gap: 0.9rem !important;
+    gap: 0.9rem;
   }
 
-  /* remove any leftover negative margins that broke layout on phones */
   .developer-photo,
   .developer-details,
   .developer-name,
   .developer-role {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  /* ensure no element wider than viewport */
   .developer-page * {
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 
-  /* very small phones tweak */
   @media (max-width: 420px) {
-    .developer-name { font-size: 1.38rem !important; }
-    .developer-photo-wrapper { width: 94% !important; max-width: 340px !important; }
-    .developer-photo { border-radius: 10px !important; }
-    .developer-details { padding: 0.6rem 0.8rem !important; }
+    .developer-name { font-size: 1.38rem; }
+    .developer-photo-wrapper { width: 94%; max-width: 340px; }
+    .developer-photo { border-radius: 10px; }
+    .developer-details { padding: 0.6rem 0.8rem; }
   }
 }
-
-
-

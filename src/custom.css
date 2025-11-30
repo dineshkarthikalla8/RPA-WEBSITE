@@ -269,7 +269,7 @@ h2 { font-size: clamp(1.25rem, 2.7vw, 1.8rem); }
 /* ---------- ACCESSIBILITY / REDUCED MOTION ----------
 */
 @media (prefers-reduced-motion: reduce) {
-  .auto-fade, .auto-pulse, .auto-spin, .auto-slide-in, .glass, .glass:hover { animation: none !important; transition: none !important; transform: none !important; }
+  .auto-fade, .auto-pulse, .auto-spin, .auto-slide-in, .glass, .glass:hover { animation: none ; transition: none ; transform: none ; }
 }
 
 /* ---------- RESPONSIVE TWEAKS ----------

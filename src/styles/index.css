@@ -69,15 +69,20 @@ button:focus-visible {
 /* global reset - add this first in your main CSS file (index.css / global.css) */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
   color: #fff;
   background: #071226;
   overflow-x: hidden; /* prevents horizontal scroll caused by large absolute elements */

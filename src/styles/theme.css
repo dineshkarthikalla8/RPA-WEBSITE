@@ -190,7 +190,7 @@ html, body, #root {
 
 /* If a page accidentally uses absolute positioning, force it back in flow */
 .page-container.position-reset * {
-  position: static !important;
+  position: static ;
 }
 
 /* Helpful debug outlines (remove once fixed) */
@@ -238,28 +238,28 @@ html, body, #root {
 }
 /* SAFE no-op page wrapper: makes .page-container/.page-inner harmless */
 .page-container {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  background: transparent !important;
+  padding: 0 ;
+  margin: 0 ;
+  width: 100% ;
+  box-sizing: border-box ;
+  background: transparent ;
 }
 
 .page-inner {
-  padding: 0 !important;
-  margin: 0 auto !important;
-  max-width: none !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
+  padding: 0 ;
+  margin: 0 auto ;
+  max-width: none ;
+  width: 100% ;
+  box-sizing: border-box ;
 }
 
 /* revert any shared-glass default spacing so pages using custom glass keep their look */
 .shared-glass, .glass-card {
-  padding: inherit !important;
-  margin: inherit !important;
-  border-radius: inherit !important;
-  background: inherit !important;
+  padding: inherit ;
+  margin: inherit ;
+  border-radius: inherit ;
+  background: inherit ;
 }
 
 /* Prevent accidental extra top/bottom spacing if you used .page-container previously */
-.app-main { padding: 0 !important; }
+.app-main { padding: 0 ; }

@@ -38,14 +38,14 @@
   }
 
   .loader-video {
-    width: 90vw !important;     /* smaller, fixed proportion */
-    height: auto !important;    /* keep aspect ratio */
-    max-height: 55vh !important;
-    object-fit: contain !important;
-    transform: none !important; /* remove any scale */
+    width: 90vw ;     /* smaller, fixed proportion */
+    height: auto ;    /* keep aspect ratio */
+    max-height: 55vh ;
+    object-fit: contain ;
+    transform: none ; /* remove any scale */
   }
 
   .video-loader::after {
-    background: rgba(0,0,0,0.55); /* slightly darker to improve visibility */
+    background: rgba(0,0,0,0.55); 
   }
 }
