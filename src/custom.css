@@ -1,0 +1,281 @@
+/* src/custom.css
+   Dark + Light theme aware, glassmorphism UI, micro-interactions + automation utilities
+   Replace your current custom.css with this file.
+*/
+
+/* ---------- THEME VARIABLES ----------
+   Light theme overrides: :root.light { ... } are applied by JS toggle (document.documentElement.classList)
+*/
+:root.light {
+  --bg-1: #f6f8ff;
+  --bg-2: #eef2ff;
+  --glass-bg: rgba(255,255,255,0.75);
+  --glass-strong: rgba(255,255,255,0.88);
+  --glass-border: rgba(16,24,40,0.06);
+  --accent-grad: linear-gradient(90deg,#7b61ff,#59a2ff);
+  --accent-solid: #6b5cff;
+  --muted: #4b5563;
+  --card-shadow: rgba(16,24,40,0.06);
+  --text: #0f172a;
+  --glass-contrast: rgba(0,0,0,0.04);
+}
+
+:root{
+  /* DARK theme default (keep as your existing dark values) */
+  --bg-1: #071026;
+  --bg-2: #0b1630;
+  --glass-bg: rgba(255,255,255,0.03);
+  --glass-strong: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.08);
+  --accent-grad: linear-gradient(90deg,#8b5cf6,#5ea0ff);
+  --accent-solid: #7c5cff;
+  --muted: #9aa4bf;
+  --card-shadow: rgba(2,6,23,0.7);
+  --text: #eaf1ff;
+  --glass-contrast: rgba(255,255,255,0.02);
+}
+
+/* ---------- GLOBAL BASE ----------
+*/
+* { box-sizing: border-box; }
+html,body,#root { height:100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.06), transparent 8%),
+              linear-gradient(180deg,var(--bg-1), var(--bg-2));
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 400ms ease, color 300ms ease;
+}
+
+/* container */
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+/* ---------- CONTENT / GLASS SURFACES ----------
+   Reusable glass classes
+*/
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  transition: transform 240ms cubic-bezier(.2,.9,.2,1), box-shadow 240ms ease, background 300ms ease;
+}
+
+/* variants */
+.glass-lg { border-radius: 16px; padding: 1.25rem; }
+.glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  box-shadow: 0 16px 40px rgba(2,6,23,0.8);
+}
+
+/* micro elevation on hover */
+.glass:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.85); }
+
+/* ---------- NAV / LOGO / BUTTONS ----------
+*/
+.logo-pill {
+  display:inline-block;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 8px 18px rgba(2,6,23,0.6);
+  color: var(--text);
+  font-weight:700;
+}
+
+/* Buttons */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem;
+  font-weight:600;
+  border-radius:10px;
+  padding:.55rem 1rem;
+  transition: transform 180ms ease, box-shadow 200ms ease, opacity 150ms ease;
+  cursor:pointer; text-decoration:none;
+}
+
+/* Primary accent button */
+.btn-primary, .btn-accent {
+  background: var(--accent-grad);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(124,92,255,0.14);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.btn-primary:hover { transform: translateY(-4px); opacity: .98; }
+
+/* Secondary outline */
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.btn-outline:hover { transform: translateY(-2px); }
+
+/* Ghost button (subtle) */
+.btn-ghost {
+  background: transparent; color: var(--text);
+  border: none; box-shadow: none;
+}
+
+/* small button */
+.btn-sm { padding: .35rem .65rem; border-radius:8px; font-size:.9rem; }
+
+/* focus visible accessible ring */
+:focus { outline: none; }
+:focus-visible {
+  box-shadow: 0 0 0 4px rgba(124,92,255,0.12);
+  border-radius: 10px;
+}
+
+/* ---------- TEXT STYLES ----------
+*/
+h1,h2,h3 { margin:0; }
+h1 { font-size: clamp(1.8rem, 3.5vw, 3.4rem); line-height:1.02; }
+h2 { font-size: clamp(1.25rem, 2.7vw, 1.8rem); }
+.lead { color: var(--muted); font-size:1rem; }
+
+/* muted */
+.muted { color: var(--muted); }
+
+/* badges */
+.badge {
+  display:inline-block; padding:.25rem .6rem; font-weight:600; border-radius:999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ---------- CARDS & GRID ----------
+*/
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* small utility for card title/sub */
+.card-title { font-weight:700; color:var(--text); }
+.card-sub { color:var(--muted); font-size:.95rem; }
+
+/* responsive grid helpers */
+.grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
+@media (max-width:900px) { .grid-3 { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:640px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* ---------- FORM / INPUTS ----------
+*/
+.input {
+  width:100%; padding:.65rem .8rem; border-radius:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+}
+.input::placeholder { color: var(--muted); }
+
+/* focus state */
+.input:focus { box-shadow: 0 8px 24px rgba(124,92,255,0.08); transform: translateY(-1px); }
+
+/* form row */
+.form-row { display:flex; gap:.75rem; align-items:center; }
+@media (max-width:640px) { .form-row { flex-direction:column; } }
+
+/* ---------- LOADING / SKELETON / TOOLTIP ----------
+*/
+/* skeleton */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer { 0% { background-position: 200% 0 } 100% { background-position: -200% 0 } }
+
+/* tooltip */
+.tooltip {
+  position: relative;
+}
+.tooltip:hover::after {
+  content: attr(data-tip);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: calc(100% + 8px);
+  background: rgba(0,0,0,0.7); color: #fff;
+  padding:.4rem .6rem; border-radius:6px; font-size:.85rem;
+  white-space:nowrap;
+}
+
+/* ---------- AUTOMATION / MOTION UTILITIES ----------
+   Use these classes to add small automated animations to UI elements.
+   e.g. <div className="auto-fade">, <ul className="auto-stagger">...</ul>
+*/
+@keyframes fadeInUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+@keyframes pulseSoft { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+@keyframes spin360 { to { transform: rotate(360deg); } }
+@keyframes slideInLeft { from { opacity:0; transform: translateX(-16px);} to { opacity:1; transform: translateX(0); } }
+
+/* fade in + lift */
+.auto-fade { animation: fadeInUp .6s cubic-bezier(.2,.9,.2,1) both; }
+
+/* soft pulse (subtle attention) */
+.auto-pulse { animation: pulseSoft 2.6s ease-in-out infinite; transform-origin:center; }
+
+/* spin (useful on icons / loaders) */
+.auto-spin { animation: spin360 1.6s linear infinite; }
+
+/* slide in */
+.auto-slide-in { animation: slideInLeft .5s cubic-bezier(.2,.9,.2,1) both; }
+
+/* stagger container: add data-stagger on children */
+.auto-stagger > * { opacity:0; transform: translateY(8px); animation: fadeInUp .52s both; animation-delay: calc(var(--i) * .08s); }
+.auto-stagger > *:nth-child(1){ --i:0 } .auto-stagger > *:nth-child(2){ --i:1 } .auto-stagger > *:nth-child(3){ --i:2 }
+/* You can set --i manually for precise control on each child */
+
+/* auto blur pulse for accent blob */
+.accent-blob {
+  width:120px; height:120px; border-radius:99px;
+  background: linear-gradient(135deg, rgba(124,92,255,0.18), rgba(94,160,255,0.14));
+  filter: blur(24px); opacity:.9; position:absolute; z-index:0; pointer-events:none;
+}
+
+/* ---------- TOOLING: MODAL, TOAST ----------
+*/
+.modal-backdrop {
+  position: fixed; inset:0; background: rgba(2,6,23,0.6); display:flex; align-items:center; justify-content:center; z-index:1000;
+}
+.modal { width: 100%; max-width:720px; margin: 1rem; padding:1.25rem; border-radius:12px; }
+
+/* toast */
+.toast {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index:1100;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  padding: .65rem .9rem; border-radius:8px; border:1px solid rgba(255,255,255,0.06);
+}
+
+/* ---------- SMALL UTILITIES ----------
+*/
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.mt-2 { margin-top:.5rem } .mt-4 { margin-top:1rem } .mb-2 { margin-bottom:.5rem }
+.flex { display:flex } .items-center { align-items:center } .justify-center { justify-content:center }
+.text-center { text-align:center }
+
+/* ---------- ACCESSIBILITY / REDUCED MOTION ----------
+*/
+@media (prefers-reduced-motion: reduce) {
+  .auto-fade, .auto-pulse, .auto-spin, .auto-slide-in, .glass, .glass:hover { animation: none !important; transition: none !important; transform: none !important; }
+}
+
+/* ---------- RESPONSIVE TWEAKS ----------
+*/
+@media (max-width:640px) {
+  .container { padding: 1rem; }
+  .btn { font-size: .95rem; padding:.45rem .8rem; }
+  .glass { padding: .9rem; }
+}

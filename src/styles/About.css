@@ -1,0 +1,143 @@
+
+/* page-level container: keep spacing handled by wrapper but provide safe defaults */
+.about-container {
+  padding: 1.25rem 0; /* outer vertical breathing room — horizontal padding is in .page-inner */
+  box-sizing: border-box;
+}
+
+/* glass card: centered and constrained */
+.about-glass {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--card);                /* theme-aware */
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px var(--shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: 16px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* title */
+.about-title-top,
+.about-title {
+  color: var(--text);
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  line-height: 1.08;
+  font-size: 2rem;
+}
+
+/* slightly larger heading on wide screens */
+@media (min-width: 768px) {
+  .about-title { font-size: 2.4rem; }
+}
+
+/* wrapper: stacks on mobile, side-by-side on wide */
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .about-wrapper {
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* right / main content */
+.about-right {
+  flex: 1 1 60%;
+  min-width: 0; /* prevents overflow when nested flex items shrink */
+}
+
+/* text styles */
+.about-text,
+.about-footer,
+.about-list li {
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.65;
+  margin: 0 0 1rem 0;
+}
+.about-list li strong {
+  color: #60a5fa; /* change to your desired color */
+  font-weight: 700;
+}
+.about-footer strong {
+  color: #4E56ED; /* change to your desired color */
+  font-weight: 700;
+}
+
+/* subtitle */
+.about-subtitle {
+  color: var(--text);
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+}
+
+/* list */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.about-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* emphasis color for strong items */
+.about-list strong {
+  color: var(--accent);
+}
+
+/* footer sentence inside card */
+.about-footer {
+  margin-top: 1rem;
+}
+
+/* small adjustments for very small screens */
+@media (max-width: 520px) {
+  .about-glass {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .about-title,
+  .about-title-top {
+    font-size: 1.5rem;
+  }
+  .about-text,
+  .about-footer,
+  .about-list li {
+    font-size: 1rem;
+  }
+}
+
+/* Optional helper: keep image/content blocks from overflowing in flex containers */
+.about-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Accessibility: preserve contrast for links if any appear here */
+.about-glass a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* If you still use any left offsets in markup, remove them:
+   This ensures uniform spacing when wrapped by .page-inner */
+.about-title,
+.about-title-top {
+  margin-left: 0;
+}

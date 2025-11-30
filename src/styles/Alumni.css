@@ -1,0 +1,494 @@
+/* Alumni.css - Updated big layout + special color headings */
+
+.alumni-section {
+  padding: 1rem 1rem;
+  background: linear-gradient(180deg, #050b16 0%, #061325 100%);
+  color: #e6eef8;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+}
+
+.alumni-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.alumni-title {
+  font-size: 2.7rem;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.alumni-intro {
+  margin-bottom: 2.5rem;
+  color: #bcd0ea;
+  max-width: 780px;
+}
+
+/* MAIN LIST */
+.alumni-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ALUMNI CARD (BIGGER) */
+.alumni-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  transition: transform 200ms ease, box-shadow 250ms ease;
+}
+
+.alumni-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* PHOTO — MAKE IT BIGGER */
+.alumni-photo-wrap {
+ width: 250px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d1627;
+}
+
+.alumni-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT AREA */
+.alumni-meta {
+  flex: 1;
+}
+
+/* NAME — SPECIAL COLOR + BIGGER */
+.alumni-name {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7dd3fc, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ROLE — SPECIAL ACCENT COLOR */
+.alumni-role {
+  margin: 0.4rem 0 1rem;
+  color: #72b7ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* BIO */
+.alumni-bio {
+  margin: 0;
+  color: #cfdaf5;
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+/* RESPONSIVE (TABLET) */
+@media (max-width: 820px) {
+  .alumni-card {
+    gap: 1.6rem;
+    padding: 1.5rem;
+  }
+
+  .alumni-photo-wrap {
+    flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .alumni-name {
+    font-size: 1.5rem;
+  }
+}
+
+/* RESPONSIVE (MOBILE) */
+@media (max-width: 480px) {
+  .alumni-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .alumni-photo-wrap {
+    width: 160px;
+    height: 160px;
+  }
+
+  .alumni-meta {
+    width: 100%;
+  }
+}
+
+.founder-photo-wrap {
+  flex-shrink: 0 !important;
+  width: 380px !important;
+  height: 440px !important;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d1627;
+
+  /* Neon Glow */
+  box-shadow:
+    0 0 20px rgba(0, 195, 255, 0.35),
+    0 0 45px rgba(0, 195, 255, 0.25),
+    0 0 70px rgba(0, 195, 255, 0.2);
+}
+/*MOBILE*/
+@media (max-width: 768px) {
+  .alumni-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .alumni-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .alumni-card img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .alumni-name {
+    font-size: 18px;
+  }
+}
+/* ===========================
+   Mobile-only fixes (paste at end)
+   =========================== */
+
+/* Phones (up to 480px) */
+@media (max-width: 480px) {
+
+  /* avoid any horizontal overflow from big containers */
+  .alumni-section, .alumni-inner {
+    overflow-x: hidden;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* card -> stacked, centered, full width */
+  .alumni-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 0.9rem;
+  }
+
+  /* reduce photo sizes to fit phone screens */
+  .alumni-photo-wrap,
+  .alumni-photo,
+  .founder-photo-wrap {
+    width: 160px !important;
+    height: 160px !important;
+    flex: 0 0 auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* tone down neon / heavy shadows on tiny devices to avoid visuals overflowing */
+  .founder-photo-wrap {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 0 8px rgba(255,255,255,0.03);
+    background: #0d1627;
+  }
+
+  /* tighten text spacing and sizes */
+  .alumni-name { font-size: 1.25rem !important; line-height: 1.15; }
+  .alumni-role { font-size: 1rem; margin-top: 0.35rem; margin-bottom: 0.5rem; }
+  .alumni-bio { font-size: 0.98rem; line-height: 1.45; }
+
+  /* reduce large intro width/padding so it wraps nicely */
+  .alumni-intro { max-width: 100%; padding: 0 0.5rem; font-size: 0.98rem; }
+
+  /* grid spacing smaller */
+  .alumni-grid { gap: 1rem; }
+
+  /* ensure cards don't generate right-scroll */
+  .alumni-wrapper,
+  .alumni-inner { padding-left: 0; padding-right: 0; margin-left: auto; margin-right: auto; }
+}
+
+/* Small tablets (<= 768px) — softer adjustments */
+@media (max-width: 768px) {
+  .alumni-card {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .alumni-photo-wrap {
+    flex: 0 0 140px;
+    width: 140px;
+    height: 140px;
+  }
+
+  /* tone down founder big box on tablets so it fits */
+  .founder-photo-wrap {
+    width: 220px !important;
+    height: 260px !important;
+    margin: 0 auto;
+    border-radius: 14px;
+
+    /* softer glow for mobile */
+    box-shadow:
+      0 0 18px rgba(0, 195, 255, 0.25),
+      0 0 32px rgba(0, 195, 255, 0.20),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+
+  .alumni-name { font-size: 1.45rem; }
+  .alumni-bio { font-size: 1rem; }
+}
+/* ===== Force larger founder photo on phones (strong override) ===== */
+@media (max-width: 480px) {
+  /* ensure containers don't clip or force small widths */
+  .alumni-section,
+  .alumni-inner,
+  .alumni-grid,
+  .alumni-card,
+  .alumni-wrapper {
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Force the founder image wrapper to the larger mobile size */
+  .founder-photo-wrap,
+  .alumni-card .founder-photo-wrap,
+  .alumni-wrapper .founder-photo-wrap {
+    width: 220px !important;      /* change to 250px or 280px if you want it bigger */
+    height: 260px !important;     /* change accordingly */
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+    margin: 0.4rem auto !important;
+    display: block !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #0d1627 !important;
+
+    /* softer neon glow for mobile */
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.55),
+      0 0 18px rgba(0,195,255,0.20) !important,
+      inset 0 0 8px rgba(255,255,255,0.03) !important;
+  }
+
+  /* Ensure the image inside fills the wrapper */
+  .founder-photo-wrap img,
+  .founder-photo-wrap .alumni-photo,
+  .alumni-photo-wrap img,
+  .alumni-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    max-width: none !important;
+  }
+
+  /* If another rule forced small img sizes, override it */
+  .alumni-card img,
+  .alumni-photo {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* tighten surrounding layout so larger image doesn't overflow */
+  .alumni-card {
+    padding: 0.9rem 1rem !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+  }
+
+  /* keep text below/next to image without overflow */
+  .alumni-meta {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+}
+/* ============================
+   FORCE: enlarge ALL NON-FOUNDER photos on phones (final)
+   Place this at the VERY BOTTOM of Team.css
+   ============================ */
+@media (max-width: 480px) {
+
+  /* ensure cards are stacked & centered */
+  .alumni-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 94% !important;
+    margin: 1rem auto !important;
+    padding: 1.25rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* enlarge photo wrapper for non-founder cards */
+  .alumni-card .alumni-photo-wrap:not(.founder-photo-wrap),
+  .alumni-photo-wrap:not(.founder-photo-wrap) {
+    width: 300px !important;         /* ← adjust width */
+    height: 360px !important;        /* ← your chosen height */
+    min-width: 0 !important;
+    min-height: 360px !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0.6rem auto !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    background: #0d1627 !important;
+    box-shadow:
+      0 12px 36px rgba(0,0,0,0.55) !important,
+      0 0 20px rgba(0,195,255,0.16) !important;
+  }
+
+  /* If you are using inner wrappers like .glass or .photo-card, force them to fill */
+  .alumni-card .alumni-photo-wrap:not(.founder-photo-wrap) .glass,
+  .alumni-card .alumni-photo-wrap:not(.founder-photo-wrap) .photo-card,
+  .alumni-card .alumni-photo-wrap:not(.founder-photo-wrap) .photo-card-inner {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+
+  /* FORCE the image to completely fill the wrapper — override any earlier width/height rules */
+  .alumni-card .alumni-photo-wrap:not(.founder-photo-wrap) img,
+  .alumni-photo-wrap:not(.founder-photo-wrap) img,
+  .alumni-card img.alumni-photo:not(.founder-photo) {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ensure meta/text sits below the image on mobile */
+  .alumni-meta {
+    width: 100% !important;
+    padding: 0.5rem 1rem !important;
+    margin-top: 0.8rem !important;
+    text-align: center !important;
+  }
+
+  /* text sizing for mobile readability */
+  .alumni-name { font-size: 1.45rem !important; line-height: 1.15 !important; }
+  .alumni-role { font-size: 1.05rem !important; }
+  .alumni-bio  { font-size: 1.02rem !important; line-height: 1.5 !important; }
+
+  /* stop horizontal overflow from any parent */
+  html, body, .alumni-section, .alumni-inner, .alumni-grid {
+    overflow-x: hidden !important;
+  }
+}
+/* ==========================================
+   FINAL FIX — FORCE FOUNDER PHOTO BIGGER
+   ========================================== */
+@media (max-width: 480px) {
+
+  .alumni-card.founder-card .founder-photo-wrap,
+  .founder-photo-wrap {
+    width: 340px !important;
+    height: 430px !important;
+    max-width: 340px !important;
+    max-height: 430px !important;
+    min-width: 340px !important;
+    min-height: 430px !important;
+    display: block !important;
+    margin: 0 auto 1rem auto !important;
+    border-radius: 18px !important;
+  }
+
+  .founder-photo-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+}
+/* REMOVE GAP ABOVE FOUNDER PHOTO — MOBILE ONLY */
+@media (max-width: 480px) {
+
+  .founder-photo-wrap {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    border: none !important;
+  }
+
+  /* Make the image fill perfectly with no overflow gap */
+  .founder-photo-wrap img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remove the shadow gap around edges */
+  .alumni-card.founder-card {
+    padding-top: 0.5rem !important;
+  }
+}
+/* ===========================================
+   REMOVE TOP GAP FOR ALL PHOTOS — MOBILE ONLY
+   =========================================== */
+@media (max-width: 480px) {
+
+  /* Remove ALL internal spacing from every photo wrapper */
+  .alumni-photo-wrap,
+  .founder-photo-wrap {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    border: none !important;
+    box-shadow: none !important; /* remove shadow gap if any */
+  }
+
+  /* Ensure all photos fill the wrapper with ZERO GAP */
+  .alumni-photo-wrap img,
+  .founder-photo-wrap img,
+  .alumni-card img {
+    display: block !important;       /* removes inline image gap */
+    margin: 0 !important;            /* removes top or bottom gap */
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;    /* no white corners */
+  }
+
+  /* Fix any wrapper causing extra spacing */
+  .alumni-card {
+    padding-top: 0.5rem !important;  /* prevents pushing downward */
+  }
+}

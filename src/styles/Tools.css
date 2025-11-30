@@ -1,0 +1,161 @@
+/* src/styles/Tools.css
+   Updated to prevent logo edges from being cut.
+*/
+
+/* Page wrapper */
+.tools-page {
+  min-height: 100vh;
+  padding: 0.5rem 1.25rem 6rem;
+  background: var(--bg);     
+  color: var(--text);  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  overflow: visible; /* ensure whole section can show overflowing content if necessary */
+}
+/* subtitle */
+.tools-sub { color: var(--muted); }
+
+/* use glass helper on cards */
+.tool-thumb { background: var(--card); box-shadow: 0 10px 30px var(--shadow); border: 1px solid var(--glass-border); }
+
+/* Title area */
+.tools-hero {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+.tools-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(36px, 6.5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: 0.25px;
+  color: #ffffff;
+}
+
+.tools-sub {
+  margin: 0.6rem 0 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 1.05rem;
+}
+
+/* Grid containing the tool logos */
+.tools-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2.25rem 1rem;
+  box-sizing: border-box;
+  overflow: visible; /* allow hover effects to show outside the grid */
+}
+
+/* On small screens wrap into rows */
+@media (max-width: 1000px) {
+  .tools-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+/* Each card holds a logo and a small caption */
+.tool-card {
+  width: 23%;
+  min-width: 160px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: visible; /* important: don't clip the image */
+  z-index: 0;
+}
+
+/* Make sure card stacks nicely on small screens */
+@media (max-width: 720px) {
+  .tool-card {
+    width: 40%;
+    min-width: 140px;
+  }
+}
+
+/* Thumbnail wrapper — keep it neutral (no forced circle) */
+.tool-thumb {
+  width: 100%;
+  display: block;
+  overflow: visible;      /* allow scaled logo to extend slightly during hover */
+  border-radius: 10px;    /* gentle rounding, not a full circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: box-shadow 180ms ease, transform 220ms ease;
+  pointer-events: auto;
+  padding: 0.5rem;        /* padding gives breathing room so image doesn't touch edges */
+}
+
+/* image inside thumb
+   - constrain both width and height to avoid cropping
+   - keep object-fit contain so full image is visible
+*/
+.tool-logo {
+  width: 100%;
+  max-width: 220px;       /* prevents extremely wide images from overflowing the card */
+  height: auto;
+  max-height: 160px;      /* limit height so tall logos don't overflow */
+  object-fit: contain;
+  display: block;
+  transform: translateY(0) scale(1);
+  transform-origin: center center;
+  transition: transform 220ms ease, filter 220ms ease;
+  border-radius: 8px;     /* rounded rectangle — change to 0 if you want no rounding */
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,0.55));
+  will-change: transform, filter;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Hover/focus zoom — modest scale to avoid overlap */
+.tool-thumb:hover .tool-logo,
+.tool-thumb:focus-visible .tool-logo {
+  transform: translateY(-6px) scale(1.03);
+  filter: drop-shadow(0 26px 48px rgba(0,0,0,0.65)) saturate(1.04);
+  z-index: 10;
+}
+
+/* subtle focus ring for keyboard users */
+.tool-thumb:focus-visible {
+  box-shadow: 0 0 0 4px rgba(96,165,250,0.12), 0 12px 30px rgba(0,0,0,0.45);
+  border-radius: 10px;
+}
+
+/* caption */
+.tool-name {
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  font-size: 0.995rem;
+}
+/* responsive tweaks */
+@media (max-width: 720px) {
+  .tool-logo { max-height: 140px; max-width: 160px; }
+}
+
+@media (min-width: 1500px) {
+  .tools-grid { gap: 3.5rem; }
+  .tool-logo { max-height: 240px; max-width: 280px; }
+}

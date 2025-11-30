@@ -1,0 +1,371 @@
+
+.glass {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* hover lift */
+.glass:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.5);
+}
+
+/* -------------------------
+   Flip card structure
+   ------------------------- */
+.photo-card {
+  perspective: 1200px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.photo-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 600ms cubic-bezier(.2,.9,.2,1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* rotate when flipped */
+.photo-card.flipped .photo-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* both faces */
+.photo-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: inherit;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* front face (photo/initials) */
+.photo-card-front {
+  transform: translateZ(0);
+}
+
+/* back face (revealed on flip) */
+.photo-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, rgba(5,13,26,0.92), rgba(15,25,40,0.92));
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* back content */
+.back-content { padding: 0.5rem 1rem; }
+.back-name {
+  font-weight: 800;
+  font-size: 2.25rem;
+  margin-bottom: 0.25rem;
+}
+.back-role {
+  opacity: 0.9;
+  font-size: 1.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #72b7ff;
+}
+.back-hint {
+  margin-top: 0.5rem;
+  font-size: 0.70rem;
+  opacity: 0.65;
+}
+
+/* -------------------------
+   Photo + initials styles
+   ------------------------- */
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* initials fallback inside the photo box */
+.photo-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.95);
+  font-weight: 800;
+  font-size: 1.6rem;
+  border-radius: 6px;
+}
+
+/* -------------------------
+   Photo box sizes (square/rect)
+   These class names are used both for the outer wrapper and for sizing.
+   ------------------------- */
+.photo-large  { width: 300px; height: 350px; margin: 0 auto; border-radius: 14px; }
+.photo-medium { width: 220px; height: 310px; margin: 0 auto; border-radius: 12px; }
+.photo-small  { width: 220px; height: 250px; margin: 0 auto; border-radius: 10px; }
+
+/* If you apply these size classes to .photo-card, ensure the inner faces fill 100% */
+.photo-card.face-fill, .photo-card .photo-card-face { width: 100%; height: 100%; }
+
+/* -------------------------
+   Team item (wrapper) & text
+   ------------------------- */
+.team-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-name {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+
+.team-role {
+  color: rgba(255,255,255,0.72);
+  margin-top: 6px;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+/* utility muted */
+.muted { color: rgba(255,255,255,0.65); }
+
+/* -------------------------
+   Accessible focus styles
+   ------------------------- */
+.photo-card:focus {
+  box-shadow: 0 0 0 4px rgba(58,138,255,0.14);
+  border-radius: 10px;
+}
+
+/* Make the glass hover lift feel nicer on focus too */
+.photo-card:focus .glass {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.5);
+}
+
+/* -------------------------
+   Responsive adjustments
+   ------------------------- */
+@media (max-width: 1024px) {
+  .photo-large { width: 260px; height: 320px; }
+  .photo-medium { width: 200px; height: 280px; }
+  .photo-small { width: 190px; height: 230px; }
+}
+
+@media (max-width: 768px) {
+  .photo-large { width: 180px; height: 220px; }
+  .photo-medium { width: 130px; height: 160px; }
+  .photo-small { width: 110px; height: 130px; }
+
+  .team-name { font-size: 0.95rem; }
+  .team-role { font-size: 0.85rem; }
+}
+
+@media (max-width: 420px) {
+  .photo-large { width: 140px; height: 160px; }
+  .photo-medium { width: 110px; height: 120px; }
+  .photo-small { width: 90px; height: 100px; }
+
+  .team-name { font-size: 0.9rem; }
+  .team-role { font-size: 0.8rem; }
+}
+/* ========= MOBILE VIEW ========== */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;   /* Stack one-by-one */
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+
+  .team-role {
+    font-size: 14px;
+  }
+
+  .team-name {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+/* ================================
+   TEAM — MOBILE OVERRIDES (paste at END of Team.css)
+   Makes photos larger on mobile while preventing overflow
+   ================================ */
+
+@media (max-width: 768px) {
+  /* Unwrap and center cards */
+  .team-section,
+  .team-grid,
+  .team-wrapper,
+  .team-card {
+    width: 94% !important;
+    max-width: 760px !important;
+    margin: 0.9rem auto !important;
+    padding: 1.0rem 1.05rem !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  /* Ensure photo-card container doesn't clip or shrink the image */
+  .photo-card,
+  .photo-card-inner,
+  .photo-card-face,
+  .glass {
+    max-width: none !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make the actual images (and photo wrappers) larger on mobile */
+  .team-card img,
+  .team-avatar,
+  .team-photo,
+  .member-photo,
+  .alumni-photo,
+  .photo-img,
+  .photo-initials,
+  .photo-large,
+  .photo-medium,
+  .photo-small,
+  .founder-photo-wrap,
+  .alumni-photo-wrap {
+    display: block !important;
+    margin: 0.5rem auto !important;
+    object-fit: cover !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+
+  /* Larger portrait sizes (choose per-type) */
+  .photo-large  { width: 260px !important; height: 320px !important; border-radius: 14px !important; }
+  .photo-medium { width: 220px !important; height: 290px !important; border-radius: 14px !important; }
+  .photo-small  { width: 200px !important; height: 250px !important; border-radius: 12px !important; }
+
+  /* If your card uses a circular avatar, increase that too */
+  .team-card img.round, .team-card img.circle, .team-avatar.circle {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50% !important;
+  }
+
+  /* Make the flip-card faces fill the wrapper */
+  .photo-card.face-fill,
+  .photo-card .photo-card-face {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Prevent flex parents from shrinking the image */
+  .team-card,
+  .team-card > * {
+    flex-shrink: 0 !important;
+  }
+
+  /* Name + role scaling so larger photo looks balanced */
+  .team-name { font-size: 1.35rem !important; margin-top: 0.6rem !important; }
+  .team-role { font-size: 1.05rem !important; margin-bottom: 0.6rem !important; color: rgba(255,255,255,0.88) !important; }
+
+  /* Reduce heavy glow / shadows that may create overflow */
+  .glass, .photo-card, .photo-large, .photo-medium, .photo-small {
+    box-shadow: 0 10px 26px rgba(0,0,0,0.45) !important;
+    filter: none !important;
+  }
+
+  /* safety: ensure nothing wider than viewport */
+  .team-section *, .team-grid * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* micro adjustments for small phones */
+  @media (max-width: 420px) {
+    .photo-large  { width: 680px !important; height: 300px !important; }
+    .photo-medium { width: 190px !important; height: 250px !important; }
+    .photo-small  { width: 180px !important; height: 200px !important; }
+    .team-card img.round, .team-avatar.circle { width: 170px !important; height: 170px !important; }
+    .team-name { font-size: 1.15rem !important; }
+    .team-role { font-size: 0.95rem !important; }
+  }
+}
+/* ===========================================
+   TEAM — INCREASE ONLY LARGE PHOTOS (MOBILE)
+   =========================================== */
+@media (max-width: 480px) {
+
+  /* Increase ONLY the largest photos */
+  .photo-large {
+    width: 310px !important;     /* increased */
+    height: 380px !important;    /* increased */
+    border-radius: 16px !important;
+    margin: 0.8rem auto !important;
+    display: block !important;
+    object-fit: cover !important;
+  }
+
+  /* Make sure the image inside fills the area */
+  .photo-large img,
+  .team-card .photo-large img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Keep card centered */
+  .team-card {
+    text-align: center !important;
+    align-items: center !important;
+  }
+}

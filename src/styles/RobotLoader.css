@@ -1,0 +1,51 @@
+/* Fullscreen video loader */
+.video-loader {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 10;
+}
+
+.loader-video {
+  width: 94%;
+  height: 94%;
+  object-fit: cover;
+}
+.video-loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(1,1,1,0.35);
+  pointer-events: none;
+}
+
+
+
+/* ============================
+   📱 MOBILE VIEW — NO ZOOM
+   ============================ */
+@media (max-width: 768px) {
+
+  .video-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .loader-video {
+    width: 90vw !important;     /* smaller, fixed proportion */
+    height: auto !important;    /* keep aspect ratio */
+    max-height: 55vh !important;
+    object-fit: contain !important;
+    transform: none !important; /* remove any scale */
+  }
+
+  .video-loader::after {
+    background: rgba(0,0,0,0.55); /* slightly darker to improve visibility */
+  }
+}

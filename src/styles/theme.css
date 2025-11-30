@@ -1,0 +1,265 @@
+/* src/styles/theme.css
+   Theme variables (light + dark). Includes toggle switch styles and subtle transitions.
+*/
+
+/* ---------- Base / fallback variables ---------- */
+:root {
+  --bg: #ffffff;
+  --surface: linear-gradient(180deg,#fafbfc,#f3f6fa);
+  --card: rgba(255,255,255,0.85);
+  --muted: rgba(17,24,39,0.6);
+  --text: #0b1220;
+  --accent: #0ea5ff;        /* cyan-accent */
+  --accent-contrast: #042a3a;
+  --glass-border: rgba(10,20,30,0.06);
+  --shadow: rgba(2,6,23,0.06);
+  --glass-blur: 6px;
+}
+
+/* ---------- Light theme (clean + modern) ---------- */
+.light {
+  --bg: linear-gradient(180deg,#ffffff 0%, #fbfdff 100%);
+  --surface: linear-gradient(180deg,#ffffff,#f6f8fb);
+  --card: #ffffff;
+  --muted: rgba(17,24,39,0.55);
+  --text: #0b1220;
+  --accent: #0ea5ff;
+  --accent-contrast: #06374a;
+  --glass-border: rgba(6,22,35,0.06);
+  --shadow: rgba(2,6,23,0.06);
+  --glass-blur: 4px;
+}
+
+/* ---------- Dark theme (your current dark blue gradient) ---------- */
+.dark {
+  --bg: linear-gradient(180deg,#071226 0%, #071829 100%);
+  --surface: linear-gradient(180deg,#071226 0%, #071829 100%);
+  --card: rgba(255,255,255,0.03);
+  --muted: rgba(255,255,255,0.72);
+  --text: #ffffff;
+  --accent: #46b1ff;
+  --accent-contrast: #042b3a;
+  --glass-border: rgba(255,255,255,0.04);
+  --shadow: rgba(2,6,23,0.7);
+  --glass-blur: 8px;
+}
+
+/* ---------- Apply core styles globally ---------- */
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 260ms ease, color 260ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* small utility classes (use in components) */
+.bg-surface { background: var(--surface); }
+.bg-card { background: var(--card); }
+.text-muted { color: var(--muted); }
+.text-accent { color: var(--accent); }
+
+/* Glass helper — use on cards (.glass) for consistent look */
+.glass {
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px var(--shadow);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Add smooth color transitions site-wide for theme changes */
+* {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* ---------- Theme Toggle (slide switch) styles ---------- */
+/* Container for switch */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+/* Hide the native checkbox */
+.theme-toggle input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Visual switch */
+.theme-toggle .switch {
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  transition: background 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  display: inline-block;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+/* knob */
+.theme-toggle .knob {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: 0 4px 10px rgba(2,6,23,0.18);
+  transform: translateX(0);
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), background 220ms ease;
+  display: inline-block;
+}
+
+/* icons inside switch (moon/sun) */
+.theme-toggle .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+.theme-toggle .icon.sun { left: 8px; }
+.theme-toggle .icon.moon { right: 8px; }
+
+/* checked state: move knob right & change accent */
+.theme-toggle input[type="checkbox"]:checked + .switch {
+  background: linear-gradient(90deg, rgba(70,177,255,0.18), rgba(14,165,255,0.12));
+  border-color: rgba(70,177,255,0.22);
+  box-shadow: 0 8px 22px rgba(70,177,255,0.06);
+}
+.theme-toggle input[type="checkbox"]:checked + .switch .knob {
+  transform: translateX(26px);
+  background: var(--accent);
+  box-shadow: 0 6px 18px rgba(15,60,80,0.18);
+}
+
+/* focus-visible ring */
+.theme-toggle input[type="checkbox"]:focus + .switch {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(14,165,255,0.12);
+  border-color: rgba(14,165,255,0.18);
+}
+
+/* small label text */
+.theme-toggle .label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+/* ============== Site-wide page layout helpers ============== */
+
+/* A consistent page wrapper every page should use */
+.page-container {
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;     /* keep theme background visible by default */
+  padding: 3.0rem 1rem;        /* page spacing (adjust) */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Inner centered content area — same width site-wide */
+.page-inner {
+  width: 100%;
+  max-width: 1200px;           /* central column width */
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Ensure main (.app-main) always grows and contains pages */
+.app-main {
+  flex: 1 1 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Footer safety: ensure footer-inner uses same container width */
+.site-footer .footer-inner,
+.site-footer-bottom .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* If a page accidentally uses absolute positioning, force it back in flow */
+.page-container.position-reset * {
+  position: static !important;
+}
+
+/* Helpful debug outlines (remove once fixed) */
+.debug-outline .page-inner { outline: 2px dashed rgba(255,255,255,0.04); }
+/* ===== site-wide page wrapper & shared glass card ===== */
+
+/* root layout helpers (should already exist, but safe to repeat) */
+.app-root { min-height: 100vh; display: flex; flex-direction: column; }
+.app-main { flex: 1 1 auto; width: 100%; box-sizing: border-box; }
+
+/* page wrapper used by Layout.jsx */
+.page-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3.0rem 0;        /* vertical spacing between header and footer */
+  background: transparent;  /* theme background already applied globally */
+}
+
+/* page-inner centers the content and sets the max width */
+.page-inner {
+  width: 100%;
+  max-width: 1200px;        /* matches Contact/Updates look */
+  margin: 0 auto;
+  padding: 0 1.25rem;       /* horizontal page padding */
+  box-sizing: border-box;
+}
+
+/* Shared 'glass' card used across pages (Contact/Updates style) */
+.shared-glass,
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Small screens: smaller vertical spacing */
+@media (max-width: 520px) {
+  .page-container { padding: 1.5rem 0; }
+  .page-inner { padding: 0 0.75rem; }
+  .shared-glass { padding: 1rem; border-radius: 10px; }
+}
+/* SAFE no-op page wrapper: makes .page-container/.page-inner harmless */
+.page-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+}
+
+.page-inner {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-width: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* revert any shared-glass default spacing so pages using custom glass keep their look */
+.shared-glass, .glass-card {
+  padding: inherit !important;
+  margin: inherit !important;
+  border-radius: inherit !important;
+  background: inherit !important;
+}
+
+/* Prevent accidental extra top/bottom spacing if you used .page-container previously */
+.app-main { padding: 0 !important; }
