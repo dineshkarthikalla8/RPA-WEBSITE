@@ -15,7 +15,7 @@ export const coordinators = [
 ];
 
 export const juniors = [
-  { name: "Sai Ram Reddy", role: "Hosting", photo: "photos/Sai Ram Reddy.jpg" },
+  { name: "Sai Ram Reddy", role: "Hosting", photo: "photos/Sairamreddy.jpg" },
   { name: "Prasanth Reddy", role: "Hosting", photo: "photos/Prasanth Reddy.jpg" },
   { name: "Santhosh", role: "Head Protocol", photo: "photos/Santosh.jpg" },
   { name: "Pujitha", role: "Head Protocol", photo: "photos/Pujitha.jpg" },
