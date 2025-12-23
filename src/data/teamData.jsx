@@ -12,6 +12,8 @@ export const coordinators = [
   { name: "Manaswini", role: "Designer Lead", photo: "photos/MPP.jpg" },
   { name: "Akhila", role: "Designer Lead", photo: "photos/Akhila.jpg" },
   { name: "Sathya Naidu", role: "Technical Lead", photo: "photos/SN.jpg" },
+  { name: "Sathya Naidu", role: "Technical Lead", photo: "photos/Jay.jpeg" },
+  { name: "Sathya Naidu", role: "Technical Lead", photo: "photos/AAs.jpeg" },
 ];
 
 export const juniors = [
