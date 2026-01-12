@@ -1,0 +1,39 @@
+/* Events Page Layout */
+.events-container {
+  padding: 40px 20px;
+}
+
+/* Main Event Card */
+.events-card {
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-radius: 24px;
+}
+
+/* Poster Image */
+.events-poster {
+  width: 320px;
+  border-radius: 16px;
+}
+
+/* Text Section */
+.events-content {
+  padding-left: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .events-card {
+    width: 100%;
+  }
+
+  .events-poster {
+    width: 100%;
+  }
+
+  .events-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+}
