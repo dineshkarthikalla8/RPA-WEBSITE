@@ -57,3 +57,13 @@ export default function Events() {
     </div>
   );
 }
+
+
+<div
+  className="glass"
+  style={{
+    maxWidth: "1200px",
+    width: "95%",
+    margin: "40px auto"
+  }}
+>
