@@ -1,39 +1,49 @@
-/* Events Page Layout */
-.events-container {
-  padding: 40px 20px;
+/* Page wrapper */
+.events-page {
+  padding: 60px 80px;
 }
 
-/* Main Event Card */
+/* Event Card */
 .events-card {
-  width: 95%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1300px;   /* 🔥 INCREASED WIDTH */
   margin: 40px auto;
+  padding: 30px;
   border-radius: 24px;
+  display: flex;
+  gap: 30px;
 }
 
-/* Poster Image */
+/* Poster */
 .events-poster {
-  width: 320px;
+  width: 340px;
   border-radius: 16px;
+  object-fit: cover;
 }
 
-/* Text Section */
+/* Content */
 .events-content {
-  padding-left: 30px;
+  flex: 1;
+}
+
+.events-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #4f7cff;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 16px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .events-card {
-    width: 100%;
+    flex-direction: column;
+    padding: 20px;
   }
 
   .events-poster {
     width: 100%;
-  }
-
-  .events-content {
-    padding-left: 0;
-    margin-top: 20px;
   }
 }
