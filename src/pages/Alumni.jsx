@@ -13,7 +13,7 @@ const ALUMNI = [
     id: 2,
     name: "Shashank",
     role: "President - Y22",
-    bio: "Served as the President of RPA Club for the year 2024-2025. He is currently pursuing studies at KL University.",
+    bio: "Served as the President of RPA Club for the year 2024-2025. He is currently pursuing studies at KL University and secured internship at MATHCO.",
     photo: "/photos/Shashank.jpg",
   },
   {
@@ -27,7 +27,7 @@ const ALUMNI = [
     id: 4,
     name: "Aravind",
     role: "Website-Handler - Y22",
-    bio: "Served as the Website Developer for the RPA Club in 2024-2025. ",
+    bio: "Served as the Website Developer for the RPA Club in 2024-2025. He is currently pursuing studies at KL University.",
     photo: "/photos/Aravindd.jpg",
   },
 
@@ -35,7 +35,7 @@ const ALUMNI = [
     id: 5,
     name: "M. Thanuja",
     role: "Technical Lead- Y22",
-    bio: "Served as the Technical lead for the RPA Club from 2022-2026. ",
+    bio: "Served as the Technical lead for the RPA Club from 2022-2026. She is currently pursuing studies at KL University. ",
     photo: "/photos/.jpg",
   },
   
