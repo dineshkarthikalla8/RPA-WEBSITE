@@ -30,6 +30,14 @@ const ALUMNI = [
     bio: "Served as the Website Developer for the RPA Club in 2024-2025. ",
     photo: "/photos/Aravindd.jpg",
   },
+
+  {
+    id: 5,
+    name: "M. Thanuja",
+    role: "Technical Lead- Y22",
+    bio: "Served as the Technical lead for the RPA Club from 2022-2026. ",
+    photo: "/photos/.jpg",
+  },
   
 ];
 
