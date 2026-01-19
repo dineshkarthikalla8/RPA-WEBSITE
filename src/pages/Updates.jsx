@@ -41,6 +41,37 @@ export default function Updates() {
           FOCUS, KLEF.
         </p>
 
+
+
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl 
+              p-10 rounded-2xl max-w-10xl leading-relaxed text-gray-300">
+
+        <h4 className="font-semibold text-blue-400 text-xl mb-5">Event Update</h4>
+
+        <p className="mb-4">
+          The RPA Club is all set to conduct event on 
+          <span className="text-white font-medium"> 23rd January 2026</span>
+          an outreach event to create awarness on AI and Cyber Systems.
+        </p>
+
+        <p className="mb-4">
+          All the RPA Club members are required to attend this session 23rd January 2026,Friday.
+          Afternoon session
+        </p>
+
+       
+
+        <p className="text-white font-medium mt-8">Stay tuned for updates!</p>
+
+        <p className="mt-6 text-gray-400">
+          — Team RPA <br />
+          FOCUS, KLEF.
+        </p>
+
+
+
+                
+
       </div>
     </section>
   );
