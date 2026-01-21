@@ -12,7 +12,7 @@ export const coordinators = [
   { name: "Manaswini", role: "Designer Lead", photo: "photos/MPP.jpg" },
   { name: "Akhila", role: "Designer Lead", photo: "photos/Akhila.jpg" },
   { name: "Sathya Naidu", role: "Internal Affarirs", photo: "photos/SN.jpg" },
-  { name: "Varshita", role: "Event Organising", photo: "photos/VN.jpg" },
+  { name: "Varshita", role: "Event Organising", photo: "photos/NV.jpg" },
   { name: "Jaya Simha", role: "General Core", photo: "photos/Jay.jpeg" },
   { name: "Aashrith", role: "General Core", photo: "photos/AAs.jpeg" },
 ]
