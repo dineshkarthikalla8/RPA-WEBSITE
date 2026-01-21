@@ -6,7 +6,7 @@ export const higher = [
 ];
 
 export const coordinators = [
-  { name: "Likitha", role: "Event Managemet", photo: "photos/Likitha.jpg" },
+  { name: "Likitha", role: "Coordinator", photo: "photos/Likitha.jpg" },
   { name: "Sharmila Priyadarshini", role: "Event Management", photo: "photos/SP.jpg" },
   { name: "Satya Sai", role: "Management Lead", photo: "photos/SS.jpg" },
   { name: "Manaswini", role: "Designer Lead", photo: "photos/MPP.jpg" },
