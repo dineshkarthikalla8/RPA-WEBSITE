@@ -6,12 +6,13 @@ export const higher = [
 ];
 
 export const coordinators = [
-  { name: "Likitha", role: "Event Manager", photo: "photos/Likitha.jpg" },
-  { name: "Sharmila Priyadarshini", role: "Event Manager", photo: "photos/SP.jpg" },
-  { name: "Satya Sai", role: "Drafting Lead", photo: "photos/SS.jpg" },
+  { name: "Likitha", role: "Event Managemet", photo: "photos/Likitha.jpg" },
+  { name: "Sharmila Priyadarshini", role: "Event Management", photo: "photos/SP.jpg" },
+  { name: "Satya Sai", role: "Management Lead", photo: "photos/SS.jpg" },
   { name: "Manaswini", role: "Designer Lead", photo: "photos/MPP.jpg" },
   { name: "Akhila", role: "Designer Lead", photo: "photos/Akhila.jpg" },
-  { name: "Sathya Naidu", role: "Technical Lead", photo: "photos/SN.jpg" },
+  { name: "Sathya Naidu", role: "Internal Affarirs", photo: "photos/SN.jpg" },
+  { name: "Varshita", role: "Event Organising", photo: "photos/VN.jpg" },
   { name: "Jaya Simha", role: "General Core", photo: "photos/Jay.jpeg" },
   { name: "Aashrith", role: "General Core", photo: "photos/AAs.jpeg" },
 ]
