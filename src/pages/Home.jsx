@@ -8,26 +8,8 @@ export default function Home() {
   return (
     <div className="home-container relative min-h-screen w-full bg-transparent text-white px-10 pt-20">
 
-      {/* 🔴 Maintenance Popup */}
-      {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="bg-white text-black p-10 rounded-xl shadow-2xl text-center max-w-lg w-full">
-            <h1 className="text-3xl font-bold text-red-600 mb-4">
-              🚧 SITE UNDER MAINTENANCE 🚧
-            </h1>
-            <p className="text-lg mb-6">
-              We are currently working on improvements.<br />
-              Please check back soon!
-            </p>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+    
+      
 
       {/* Main Content */}
       <img
