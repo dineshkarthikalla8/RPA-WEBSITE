@@ -43,7 +43,7 @@ const ALUMNI = [
     name: "N. Krishna ",
     role: "Designer and Website Handler",
     bio: "Served as the Designer and Website Handler for the RPA Club from 2021-2024. He completes her studies at KL University. Now working as HCL TECH",
-    photo: "/photos/NK.jpg",
+    photo: "/photos/NK.jpeg",
   },
   
   
