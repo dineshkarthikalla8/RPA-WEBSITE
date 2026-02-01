@@ -93,6 +93,7 @@ export default function NavBar() {
                 <NavLink to="/events" className={navItem}>Events</NavLink>
                 <NavLink to="/contact" className={navItem}>Contact</NavLink>
                 <NavLink to="/updates" className={navItem}>Updates</NavLink>
+                <NavLink to="/gallery" className={navItem}>Gallery</NavLink>
                 <NavLink to="/developer" className={navItem}>Developer</NavLink>
                 <NavLink to="/alumni" className={navItem}>Alumni</NavLink>
               </nav>
