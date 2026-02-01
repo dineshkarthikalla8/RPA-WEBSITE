@@ -2,8 +2,8 @@ import React from "react";
 import "../styles/Gallery.css";
 
 const galleryItems = [
-  { type: "image", src: "/gallery/img1.jpg" },
-  { type: "image", src: "/gallery/img2.jpg" },
+  { type: "image", src: "/gallery/1.jpg" },
+  { type: "image", src: "/gallery/team.jpg" },
   { type: "image", src: "/gallery/img3.jpg" },
   { type: "video", src: "/gallery/video1.mp4" },
   { type: "video", src: "/gallery/video2.mp4" }
