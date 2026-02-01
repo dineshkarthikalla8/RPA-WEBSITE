@@ -165,6 +165,8 @@ export default function NavBar() {
 
                 <NavLink to="/alumni" onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? "px-4 py-3 rounded bg-white/5 text-white font-semibold" : "px-4 py-3 rounded hover:bg-white/3 text-white/80")}>Alumni</NavLink>
 
+                <NavLink to="/gallery" onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? "px-4 py-3 rounded bg-white/5 text-white font-semibold" : "px-4 py-3 rounded hover:bg-white/3 text-white/80")}>Gallery</NavLink>
+        
                 <div className="px-4 pt-2">
                   <Link to="/join" onClick={() => setOpen(false)} className="block w-full text-center px-4 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-600 text-black font-semibold">Join</Link>
                 </div>
