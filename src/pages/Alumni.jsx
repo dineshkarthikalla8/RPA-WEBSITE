@@ -42,7 +42,7 @@ const ALUMNI = [
     id: 6,
     name: "N. Krishna ",
     role: "Designer and Website Handler - Y21",
-    bio: "Served as the Designer and Website Handler for the RPA Club from 2021-2024.He completed his Btech in Computer Science and Engineering specialized in Artificial Intelligence and Intelligence Process Automation. Currently working at HclTech",
+    bio: "Served as the Designer and Website Handler for the RPA Club from 2022-2024.He completed his Btech in Computer Science and Engineering specialized in Artificial Intelligence and Intelligence Process Automation. Currently working at HclTech",
     photo: "/photos/NK.jpeg",
   },
   
