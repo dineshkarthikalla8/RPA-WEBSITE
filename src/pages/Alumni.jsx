@@ -38,6 +38,14 @@ const ALUMNI = [
     bio: "Served as the Technical lead for the RPA Club from 2022-2026. She completes her studies at KL University. Now working as System Enginner in TCS",
     photo: "/photos/TJ.jpg",
   },
+  {
+    id: 6,
+    name: "N. Krishna ",
+    role: "Designer and Website Handler",
+    bio: "Served as the Designer and Website Handler for the RPA Club from 2021-2024. He completes her studies at KL University. Now working as HCL TECH",
+    photo: "/photos/NK.jpg",
+  },
+  
   
 ];
 
