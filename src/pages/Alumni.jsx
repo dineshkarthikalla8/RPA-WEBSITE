@@ -35,7 +35,7 @@ const ALUMNI = [
     id: 5,
     name: "M. Thanuja",
     role: "Technical Lead- Y22",
-    bio: "Served as the Technical lead for the RPA Club from 2022-2026. She is currently pursuing studies at KL University. Now working as System Enginner in TCS",
+    bio: "Served as the Technical lead for the RPA Club from 2022-2026. She completes her studies at KL University. Now working as System Enginner in TCS",
     photo: "/photos/TJ.jpg",
   },
   
