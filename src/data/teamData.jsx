@@ -1,8 +1,8 @@
 
 export const higher = [
-  { name: "Sandeep", role: "President", photo: "/photos/Sandeepp.jpg" },
+
   { name: "Dinesh Karthik", role: "President", photo: "/photos/Karthik.JPG" },
-  { name: "Jairaj Reddy", role: "HR,Advisor", photo: "/photos/jairajuu.jpg" }, 
+  { name: "Jairaj Reddy", role: "Vice President,Advisor", photo: "/photos/jairajuu.jpg" }, 
 ];
 
 export const coordinators = [
