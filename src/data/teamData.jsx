@@ -31,4 +31,6 @@ export const juniors = [
   { name: "Uday Kiran", role: "Designer", photo: "photos/Uday Kiran.jpg" },
   { name: "Pravalli Swaraj", role: "Drafting", photo: "photos/Pravalli Swaraj.jpg" },
   { name: "Nikitha", role: "Drafting", photo: "photos/Nikitha.jpg" },
+  { name: "Pavan", role: "PR Lead", photo: "photos/Pavan.jpg" },
+  
 ];
